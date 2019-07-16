@@ -1,5 +1,8 @@
 package hbcu.stay.ready.assessment1.part1;
+import com.sun.tools.corba.se.idl.StringGen;
+import hbcu.stay.ready.assessment1.part2.StringUtils;
 
+import java.lang.String;
 /**
  * Created by leon on 2/16/18.
  */
@@ -17,7 +20,8 @@ public class BasicStringUtils {
      * @return string with identical contents, in the reverse order
      */
     public static String reverse(String str) {
-        return null;
+        StringBuilder reverseString = new StringBuilder(str);
+        return reverseString.reverse().toString();
     }
 
     /**
@@ -25,7 +29,16 @@ public class BasicStringUtils {
      * @return string with identical contents, with each word individually in reverse order
      */
     public static String reverseWords(String str) {
-        return null;
+        StringBuilder reverseStr = new StringBuilder(str);
+        int ismystringworking = 0;
+        //String [] strWords = str.split(" ");
+        //for(word: strWords){}
+        for (int i = reverseStr.charAt(0); i < str.length() - 1; i++) {
+            reverseStr = reverseStr.reverse();
+            ismystringworking++;
+
+        }
+        return reverseStr.toString() + ismystringworking;
     }
 
     /**
@@ -33,7 +46,14 @@ public class BasicStringUtils {
      * @return string with identical contents, in reverse order, with first character capitalized
      */
     public static String reverseThenCamelCase(String str) {
-        return null;
+        /* int i = 0;
+        String word = str.toUpperCase().charAt(i);
+        String newStr = new String();
+        StringBuilder reverseIt = new StringBuilder(str)
+        for (;str.length()-1; i >= 0; i--){
+            newStr+=reverseIt.reverse(word);
+        }
+        return newStr; */
     }
 
 
@@ -50,7 +70,13 @@ public class BasicStringUtils {
      * @return string with identical characters, each with opposite casing
      */
     public static String invertCasing(String str) {
-        return null;
+        char[] charStr = new Character();
+        for (int i = 0; i < charStr.length; i--) {
+            if (Character.isLowerCase(charStr[i])) {
+                charStr[i] = Character.toUpperCase(charStr[i]);
+            }
+            charStr[i] = Character.toLowerCase(charStr[i]);
+        }
+        return str;
     }
-
 }
